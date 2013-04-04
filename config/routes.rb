@@ -1,4 +1,8 @@
 TopChoice::Application.routes.draw do
+  get "entries/index"
+
+  get "entries/create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
