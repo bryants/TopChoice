@@ -47,3 +47,241 @@ Served asset /jquery.js - 200 OK (7ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 00:26:43 -0400
 Served asset /application.js - 200 OK (8ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 01:24:21 -0400
+Processing by EntriesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSHOW max_identifier_length[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) AS count_all, choice AS choice FROM "entries" GROUP BY choice
+Completed 500 Internal Server Error in 138ms
+
+NoMethodError (undefined method `Entry' for #<Class:0x007f0b3c5ea418>):
+  app/models/entry.rb:6:in `get_results'
+  app/controllers/entries_controller.rb:3:in `index'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 01:27:32 -0400
+Processing by EntriesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSHOW max_identifier_length[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) AS count_all, choice AS choice FROM "entries" GROUP BY choice
+Completed 500 Internal Server Error in 64ms
+
+NoMethodError (undefined method `Entry' for #<Class:0x007f690067e128>):
+  app/models/entry.rb:6:in `get_results'
+  app/controllers/entries_controller.rb:3:in `index'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.1ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20130404041944)
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 01:32:33 -0400
+Processing by EntriesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSHOW max_identifier_length[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) AS count_all, choice AS choice FROM "entries" GROUP BY choice
+Completed 500 Internal Server Error in 69ms
+
+NameError (uninitialized constant Entry::FORM_OPTION):
+  app/models/entry.rb:7:in `get_results'
+  app/controllers/entries_controller.rb:3:in `index'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.9ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20130404041944)
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 01:35:09 -0400
+Processing by EntriesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSHOW max_identifier_length[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) AS count_all, choice AS choice FROM "entries" GROUP BY choice
+  Rendered entries/index.html.erb within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 128ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <script src="../../assets/javascripts/jquery.charts.js"></script>
+    5: 
+    6: <table id="results">
+    7:   <% @survey_entries.each do |o| %>
+    8:     <tr>
+    9:       <td><%= o['title'] %></td>  
+    10:       <td><%= o['votes'] %></td>
+  app/views/entries/index.html.erb:7:in `_app_views_entries_index_html_erb__260210890510935513_70035450399200'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20130404041944)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateEntries (20130404041944)
+  [1m[35m (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Processing by EntriesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSHOW max_identifier_length[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) AS count_all, choice AS choice FROM "entries" GROUP BY choice
+  Rendered entries/index.html.erb within layouts/application (18.3ms)
+Compiled jquery-1.9.1.js  (2ms)  (pid 4928)
+Compiled jquery.charts.js  (0ms)  (pid 4928)
+Compiled application.js  (33ms)  (pid 4928)
+Completed 200 OK in 184ms (Views: 120.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Served asset /entries.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery-1.9.1.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:38 -0400
+Served asset /jquery-1.9.1.js - 200 OK (22ms)
+
+
+Started GET "/assets/entries.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /entries.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.charts.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /jquery.charts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/javascripts/jquery-1.9.1.js" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /javascripts/jquery-1.9.1.js - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/javascripts/jquery-1.9.1.js"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/javascripts/jquery.charts.js" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /javascripts/jquery.charts.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/javascripts/jquery.charts.js"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/javascripts/jquery.charts.js" for 127.0.0.1 at 2013-04-04 01:37:39 -0400
+Served asset /javascripts/jquery.charts.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/javascripts/jquery.charts.js"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/norio/.rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2013-04-04 01:37:43 -0400
+Processing by EntriesController#create as HTML
+  Parameters: {"choice"=>"ruby"}
+WARNING: Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: choice):
+  app/controllers/entries_controller.rb:7:in `create'
+
+
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/norio/.rvm/gems/ruby-1.9.3-p374/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+Connecting to database specified by database.yml
