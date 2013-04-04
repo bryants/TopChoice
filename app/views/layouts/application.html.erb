@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TopChoice</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>RealtimeSurvey</title>
+    <%= stylesheet_link_tag :all %>
+    <link href="../../assets/stylesheets/origin.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="../../assets/javascripts/jquery-1.9.1.min.js"></script>
+    <script src="../../assets/javascripts/jquery.charts.js"></script>
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>
