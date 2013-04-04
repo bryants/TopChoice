@@ -1,6 +1,6 @@
 class Entry < ActiveRecord::Base
   FORM_OPTIONS = ['ruby', 'javascript', 'python', 'php', 'other']
-  #attr_accessible :choice
+  attr_accessible :choice
 
   def self.get_results
     counts = Entry.count({ :group => :choice })
