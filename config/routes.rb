@@ -2,7 +2,10 @@ TopChoice::Application.routes.draw do
   get "entries/index"
 
   get "entries/create"
-
+  
+  root :to => "entries#index"
+  resources :entries
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
