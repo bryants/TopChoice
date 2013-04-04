@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    Entry.create(:choice =>params[:choice]) redirect_to '/'
+    Entry.create(:choice =>params[:choice])
+    redirect_to '/'
   end
 end
