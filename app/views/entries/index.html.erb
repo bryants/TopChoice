@@ -1,22 +1,50 @@
-<h1>What's the best web language?</h1>
+<div id="container">
+  <div id="inner">
+    <h1>What's the best web language?</h1>
 
-<table id="results">
-  <% @entries.each do |o| %>
-    <tr>
-      <td><%= o['title'] %></td>  
-      <td><%= o['votes'] %></td>
-    </tr>  
-  <% end %>
-</table>
+    <table id="results">
+      <% @entries.each do |o| %>
+        <tr>
+          <td><%= o['title'] %></td>  
+          <td><%= o['votes'] %></td>
+        </tr>  
+      <% end %>
+    </table>
 
-<form action="/entries" method="POST" id="Entries">
-  <% Entry::FORM_OPTIONS.each do |o| %>
-  <p><button name="choice" value="<%= o %>"><%= o %></button></p>
-  <% end %>
-</form>
+    <form action="/entries" method="POST" id="Entries">
+      <% Entry::FORM_OPTIONS.each do |o| %>
+        <p><button name="choice" value="<%= o %>"><%= o %></button></p>
+      <% end %>
+    </form>
+  </div>
+</div>
 
+<script src="http://js.pusher.com/2.0/pusher.min.js"></script>
 <script>
-  $(function(){
-    $(&ldquo;#results&rdquo;).chart();
+  jQuery("#results").charts();
+
+  jQuery(function () {
+    var pusher = new Pusher('fadea4049d9491041f20');
+    var myChannel = pusher.subscribe('app-dev-real_time-test');
+    myChannel.bind('data-changed', function(data){
+      updateResults(data)
+    });
   });
+
+  function updateResults(data){
+   // jQuery.noticeAdd({
+   //   text: 'Results updated',
+   //   stay: false
+   // });
+
+    var tbody = jQuery("#results tbody");
+    var html = "";
+    for (var i=0; i < data.length; i++) {
+      html += "<tr><td>" + data[i].title + "</td>" +
+        "<td>" + data[i].votes + "</td></tr>";
+    }   
+    tbody.html(html);
+    jQuery(".chartscontainer").remove();
+    jQuery("#results").charts();
+  }
 </script>
